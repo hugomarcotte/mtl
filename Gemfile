@@ -21,6 +21,8 @@ gem "sprockets-es6"
 gem "suspenders"
 gem "title"
 gem "uglifier"
+gem "omniauth"
+gem "omniauth-facebook", "1.4.0"
 
 group :development do
   gem "listen"

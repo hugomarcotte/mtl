@@ -23,6 +23,8 @@ gem "title"
 gem "uglifier"
 gem "omniauth"
 gem "omniauth-facebook", "1.4.0"
+gem "bourbon"
+gem "neat"
 
 group :development do
   gem "listen"

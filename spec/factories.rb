@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :city, class: 'City' do
+    name "MyString"
+  end
   factory :user do
     provider "MyString"
     uid "MyString"

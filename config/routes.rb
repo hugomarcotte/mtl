@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/auth/failure', to: 'session#failure'
   get 'signout', to: 'sessions#destroy'
 
+  get 'admin', to: 'admin#index'
   namespace :admin do
     resources :cities
   end

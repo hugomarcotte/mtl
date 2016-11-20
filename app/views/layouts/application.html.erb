@@ -10,21 +10,22 @@
     https://github.com/calebthompson/title#usage
   %>
   <title><%= title %></title>
-  <%= stylesheet_link_tag :application, media: "all" %>
+  <%= stylesheet_link_tag :application, media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
-  <%= render "flashes" -%>
+  <%= render 'flashes' -%>
+  <%= render 'nav' %>
   <div id="user-widget">
     <% if current_user %>
         Welcome <strong><%= current_user.name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+        <%= link_to 'Sign out', signout_path, id: 'sign_out' %>
     <% else %>
-        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+        <%= link_to 'Sign in with Facebook', '/auth/facebook', id: 'sign_in' %>
     <% end %>
   </div>
   <%= yield %>
-  <%= render "javascript" %>
-  <%= render "css_overrides" %>
+  <%= render 'javascript' %>
+  <%= render 'css_overrides' %>
 </body>
 </html>

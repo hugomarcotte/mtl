@@ -25,6 +25,7 @@ gem "omniauth"
 gem "omniauth-facebook", "1.4.0"
 gem "bourbon"
 gem "neat"
+gem "font-awesome-rails"
 
 group :development do
   gem "listen"

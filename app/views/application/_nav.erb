@@ -10,12 +10,12 @@
 
   <div class="js-menu-screen sliding-panel-fade-screen"></div>
 
-  <div style="float:right;">
+  <div class="user-widget" style="float:right;">
     <% if current_user %>
-        Welcome <strong><%= current_user.name %></strong>!
+        <%= image_tag current_user.image, class: 'fb-picture' %>
         <%= link_to 'Sign out', signout_path, id: 'sign_out' %>
     <% else %>
-        <%= link_to 'Sign in with Facebook', '/auth/facebook', id: 'sign_in' %>
+        <%= link_to 'Sign in', '/auth/facebook', id: 'sign_in' %>
     <% end %>
   </div>
 </section>

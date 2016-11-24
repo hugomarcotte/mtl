@@ -1,9 +1,21 @@
-<%= fa_icon 'bars 2x', class: 'js-menu-trigger sliding-panel-button' %>
-<nav class="js-menu sliding-panel-content">
-  <ul>
-    <li><%= link_to 'Home', root_path%></li>
-    <li><%= link_to 'Admin', admin_path%></li>
-  </ul>
-</nav>
+<section class="navbar">
+  <%= fa_icon 'bars 2x', class: 'js-menu-trigger sliding-panel-button' %>
 
-<div class="js-menu-screen sliding-panel-fade-screen"></div>
+  <nav class="js-menu sliding-panel-content">
+    <ul>
+      <li><%= link_to 'Home', root_path%></li>
+      <li><%= link_to 'Admin', admin_path%></li>
+    </ul>
+  </nav>
+
+  <div class="js-menu-screen sliding-panel-fade-screen"></div>
+
+  <div style="float:right;">
+    <% if current_user %>
+        Welcome <strong><%= current_user.name %></strong>!
+        <%= link_to 'Sign out', signout_path, id: 'sign_out' %>
+    <% else %>
+        <%= link_to 'Sign in with Facebook', '/auth/facebook', id: 'sign_in' %>
+    <% end %>
+  </div>
+</section>

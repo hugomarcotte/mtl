@@ -14,5 +14,3 @@
 //= require jquery_ujs
 
 //= require_tree .
-//= require nav
-//= require flashes

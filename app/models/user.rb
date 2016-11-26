@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  validates :uid, presence: true, uniqueness: true
+  validates :provider, :name, :oauth_token, :oauth_expires_at, presence: true
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider

@@ -1,0 +1,34 @@
+<h1>Users</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Provider</th>
+    <th>Admin?</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= image_tag user.image %></td>
+        <td><%= user.name %></td>
+        <td><%= user.provider %></td>
+          <%= form_for([:admin, user], method: :put, remote: true) do |f| %>
+            <td>
+              <%= f.check_box :admin  %>
+            </td>
+            <td>
+              <%= f.submit 'save' %>
+            </td>
+          <% end %>
+          <td><%= link_to 'Destroy', [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

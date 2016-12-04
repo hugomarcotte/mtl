@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get 'admin', to: 'admin#index'
   namespace :admin do
     resources :cities
+    resources :users, only: [:index, :destroy, :update]
   end
 end

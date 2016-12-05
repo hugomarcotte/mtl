@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  after_filter :flash_to_headers
+  after_action :flash_to_headers
 
   def flash_to_headers
     return unless request.xhr?
@@ -22,7 +22,8 @@ class ApplicationController < ActionController::Base
 
   def flash_messages
     [:success, :error, :alert, :notice].
-        reject { |type| flash[type].blank? }.
-        map { |type| "#{type}:#{flash[type]}" }.join(',')
+      reject { |type| flash[type].blank? }.
+      map { |type| "#{type}:#{flash[type]}" }.
+      join(',')
   end
 end

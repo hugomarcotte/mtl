@@ -70,6 +70,8 @@
     display: inline-block;
     outline: none;
     position: relative;
+    font-size: 1.75em;
+    height: 32px;
 
     img {
       height: 1.3em;
@@ -77,8 +79,22 @@
   }
 
   .user-widget {
+    float: right;
+
     .fb-picture {
       width: 2em;
+    }
+
+    .sign_in_out_form {
+      float: right;
+      margin: 0 0 0 10px;
+
+      input {
+        font-size: 0.75em;
+        width: 75px;
+        height: 32px;
+        padding: 0;
+      }
     }
   }
 }

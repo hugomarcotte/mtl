@@ -10,12 +10,12 @@
 
   <div class="js-menu-screen sliding-panel-fade-screen"></div>
 
-  <div class="user-widget" style="float:right;">
+  <div class="user-widget">
     <% if current_user %>
         <%= image_tag current_user.image, class: 'fb-picture' %>
-        <%= link_to 'Sign out', signout_path, id: 'sign_out' %>
+        <%= button_to 'Sign out', signout_path, id: 'sign_out', :method => 'get', :form_class => 'sign_in_out_form' %>
     <% else %>
-        <%= link_to 'Sign in', '/auth/facebook', id: 'sign_in' %>
+        <%= button_to 'Sign in', '/auth/facebook', id: 'sign_in', :method => 'get', :form_class => 'sign_in_out_form' %>
     <% end %>
   </div>
 </section>
